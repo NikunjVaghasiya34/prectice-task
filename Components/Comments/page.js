@@ -8,7 +8,7 @@ export default function Comments() {
         name: "",
         email: "",
         comment: "",
-        rating: 0
+        rating: 5
     });
     const [success, setSuccess] = useState(false);
 
@@ -48,7 +48,7 @@ export default function Comments() {
         };
 
         setComments([newComment, ...comments]);
-        setForm({ name: "", email: "", comment: "", rating: 0 });
+        setForm({ name: "", email: "", comment: "", rating: 5 });
         setSuccess(true);
         setTimeout(() => setSuccess(false), 3000);
     };
