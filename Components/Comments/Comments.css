@@ -59,6 +59,13 @@
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 1px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 500px;
+
 }
 
 .comment-header {
@@ -89,6 +96,11 @@
   line-height: 24px;
   letter-spacing: 1px;
   color: #10152e;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* For Mobile Screen */
@@ -107,11 +119,10 @@
     align-items: flex-start;
   }
   .comment-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    -webkit-line-clamp: 4 !important;
+  }
+  .comment-header-left h4 { 
+    max-width: 100% !important;
   }
 }
 
@@ -267,6 +278,12 @@ textarea {
   }
 }
 
+@media screen and (max-width: 1440px) {
+  .comment-text {
+    -webkit-line-clamp: 2;
+  }
+}
+
 @media screen and (max-width: 1200px) {
  .comment-container {
   padding: 0 30px;
@@ -276,6 +293,9 @@ textarea {
 @media screen and (max-width: 1024px) {
  .comment-container {
   padding: 0;
+ }
+ .comment-header-left h4 { 
+  max-width: 340px;
  }
 }
 
