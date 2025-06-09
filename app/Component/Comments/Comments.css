@@ -1,0 +1,260 @@
+.comment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.comment-container h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding-left: 12px;
+  position: relative;
+}
+
+.comment-container h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 10px;
+  background-color: #000000;
+  border-radius: 12px;
+}
+.add-comment-h3 {
+  margin-top: 32px;
+}
+
+.comment-box {
+  padding: 30px 0;
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.comment-box:last-of-type {
+  border-bottom: none;
+}
+
+.comment-content {
+  width: 100%;
+}
+
+.comment-header-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.comment-header-left-rating {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.comment-header-left h4 {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 1px;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.rating {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #121212;
+}
+
+.date {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #757575;
+}
+
+.comment-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 1px;
+  color: #10152e;
+}
+
+/* For Mobile Screen */
+/* ================= */
+
+@media screen and (max-width: 768px) {
+  .comment-box {
+    align-items: center;
+  }
+  .comment-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .comment-header-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .comment-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Comment Form Start */
+.comment-form {
+  display: flex;
+  gap: 25px;
+  margin: 30px 0 20px 0;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #3e3232;
+}
+
+.form-left,
+.form-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input,
+textarea {
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  background: #f5f5f5;
+  border: none;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  padding: 22px 24px;
+}
+
+/* Rate Article */
+.rate-article-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.rate-article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 14px;
+  border-radius: 12px;
+}
+.rate-article p {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.review-icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.review-icons button,
+.submit-comment {
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #00ba5c;
+}
+.review-icons button p,
+.submit-comment p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.submit-comment {
+  background-color: #000000;
+  padding: 14px 30px 14px 22px;
+  align-self: center;
+}
+.submit-comment p {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .rate-article-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .rate-article {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .submit-comment {
+    justify-content: center;
+  }
+}
+
+/* Success Popup */
+.comment-success-popup {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: #00ba5c;
+  padding: 10px 16px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  animation: fadeOut 0.3s ease-in-out;
+}
+
+.comment-success-popup p {
+  color: white;
+  font-size: 16px;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

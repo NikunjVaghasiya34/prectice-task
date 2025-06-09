@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: lato, sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+  color: #10152e;
+  line-height: 66px;
+  letter-spacing: 1px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 0 30px; /* For appling body padding in Tablate view */
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0 15px;
+  }
+}

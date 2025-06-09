@@ -1,0 +1,22 @@
+.main-image {
+  height: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* For Laptop View */
+@media screen and (max-width: 1440px) {
+  .main-image {
+    height: 480px !important;
+  }
+}
+
+/* For Tablet View */
+@media screen and (max-width: 1024px) {
+  .main-image {
+    height: 232px !important;
+  }
+}

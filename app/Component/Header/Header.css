@@ -1,0 +1,27 @@
+header {
+  margin: 64px 0;
+  display: grid;
+  justify-content: center;
+}
+
+header ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+header ul li a {
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 20px;
+  color: #262d4d;
+}
+
+header ul li:nth-child(3) a,
+header ul li:nth-child(4) {
+  font-weight: 400;
+}
