@@ -149,25 +149,28 @@ export default function Comments() {
                         <p>Rate the usefulness of the article</p>
                         <div>
                             <div className="review-icons">
-                                {[1, 2, 3, 4, 5].map((star) => (
-                                    <div key={star} className="review-icon-div" onClick={() => setForm({ ...form, rating: star })}>
-                                        {star !== 5 &&
-                                            <img
-                                                src={`/Images/review_icon_${star == 1 ? 'one' : star == 2 ? 'two' : star == 3 ? 'three' : 'four'}.svg`}
-                                                alt={`Rating ${star}`}
-                                                className={star == form.rating ? "selected-star" : ""}
-                                                width={16}
-                                                height={16}
-                                            />
-                                        }
-                                        {star === 5 &&
-                                            <button onClick={() => setForm({ ...form, rating: 5 })}>
-                                                <img src="/Images/review_icon_five.svg" className={star <= form.rating ? "selected-star" : ""} alt="Review icon" width={16} height={16} />
-                                                <p>Good</p>
-                                            </button>}
-                                    </div>
-                                ))}
+                                {[1, 2, 3, 4, 5].map((star) => {
+                                    const labels = { 1: "Very Bad", 2: "Bad", 3: "Average", 4: "Nice", 5: "Good" };
+                                    const iconNames = { 1: "one", 2: "two", 3: "three", 4: "four", 5: "five" };
+                                    const isSelected = star === form.rating;
+                                    return (
+                                        <div key={star} className={`review-icon-div ${isSelected ? "selected" : ""}`}
+                                            onClick={() => setForm({ ...form, rating: star })} >
+                                            {isSelected ? (
+                                                <button className={`rating-btn rating-${star}`}>
+                                                    <img src={`/Images/review_icon_${iconNames[star]}.svg`}
+                                                        alt={`Rating ${star}`} width={16} height={16} />
+                                                    <p>{labels[star]}</p>
+                                                </button>
+                                            ) : (
+                                                <img src={`/Images/review_icon_${iconNames[star]}.svg`}
+                                                    alt={`Rating ${star}`} width={16} height={16} />
+                                            )}
+                                        </div>
+                                    );
+                                })}
                             </div>
+
                         </div>
                     </div>
                     <button type="submit" className="submit-comment" onClick={handleSubmit}>

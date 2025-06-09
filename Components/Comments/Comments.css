@@ -188,6 +188,7 @@ textarea {
 .review-icon-div {
   display: inline-block;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 .review-icons img, .review-icons button {
   cursor: pointer;
@@ -222,6 +223,35 @@ textarea {
 .submit-comment p {
   color: #ffffff;
 }
+
+.rating-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  border: none;
+  cursor: default;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.review-icon-div.selected {
+  transform: scale(1.1);
+}
+
+.rating-btn img {
+  filter: brightness(0) invert(1);
+}
+
+.rating-1 { background-color: #f44336 !important; } /* Very Bad */
+.rating-2 { background-color: #ff5722 !important; } /* Bad */
+.rating-3 { background-color: #ff9800 !important; } /* Average */
+.rating-4 { background-color: #03a9f4 !important; } /* Nice */
+.rating-5 { background-color: #4caf50 !important; } /* Good */
+
 
 @media screen and (max-width: 768px) {
   .rate-article-container {
