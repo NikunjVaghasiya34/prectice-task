@@ -185,6 +185,16 @@ textarea {
   align-items: center;
   gap: 24px;
 }
+.review-icon-div {
+  display: inline-block;
+  cursor: pointer;
+}
+.review-icons img, .review-icons button {
+  cursor: pointer;
+}
+.review-icons img.selected-star {
+  transform: scale(1.2);
+}
 .review-icons button,
 .submit-comment {
   border: none;
@@ -225,6 +235,18 @@ textarea {
   .submit-comment {
     justify-content: center;
   }
+}
+
+@media screen and (max-width: 1200px) {
+ .comment-container {
+  padding: 0 30px;
+ }
+}
+
+@media screen and (max-width: 1024px) {
+ .comment-container {
+  padding: 0;
+ }
 }
 
 /* Success Popup */

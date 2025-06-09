@@ -3,28 +3,25 @@ import { useEffect, useState } from "react";
 import "./Comments.css";
 
 export default function Comments() {
-    const [comments, setComments] = useState([
-        {
-            name: "Kang Haerin",
-            auther: "/Images/Kang_Haerin.jpg",
-            comment: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus ",
-            date: "22 Jul 2022",
-            rating: 5,
-        },
-        {
-            name: "Kang Haerin",
-            auther: "/Images/Kang_Haerin.jpg",
-            comment: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus ",
-            date: "22 Jul 2022",
-            rating: 5,
-        },
-    ]);
+    const [comments, setComments] = useState([]);
     const [form, setForm] = useState({
         name: "",
         email: "",
         comment: "",
+        rating: 0
     });
     const [success, setSuccess] = useState(false);
+
+    // For Fetch Comment Data
+    useEffect(() => {
+        const fetchComments = async () => {
+            const res = await fetch("/data/comments.json");
+            const data = await res.json();
+            setComments(data);
+        };
+
+        fetchComments();
+    }, []);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -33,25 +30,25 @@ export default function Comments() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!form.name || !form.email || !form.comment) {
-            alert("Please fill in all fields.");
+        if (!form.name || !form.email || !form.comment || !form.rating || form.rating == 0) {
+            alert("Please fill in all fields and select a rating.");
             return;
         }
 
         const newComment = {
             name: form.name,
-            auther: "/Images/Danielle_Marsh.jpg",
+            auther: "/Images/Alex_Carter_image.jpg",
             comment: form.comment,
             date: new Date().toLocaleDateString("en-GB", {
                 day: "2-digit",
                 month: "short",
                 year: "numeric",
             }),
-            rating: 5,
+            rating: form.rating,
         };
 
         setComments([newComment, ...comments]);
-        setForm({ name: "", email: "", comment: "" });
+        setForm({ name: "", email: "", comment: "", rating: 0 });
         setSuccess(true);
         setTimeout(() => setSuccess(false), 3000);
     };
@@ -83,8 +80,16 @@ export default function Comments() {
                                 <div className="comment-header-left">
                                     <h4>{item.name}</h4>
                                     <div className="comment-header-left-rating">
-                                        <img src="/Images/Five_star.jpg" alt="Star image" width={104} height={18} />
-                                        <span className="rating">(5.0)</span>
+                                        <div className="comment-header-left-rating">
+                                            {[1, 2, 3, 4, 5].map((star) => (
+                                                <img key={star}
+                                                    src={star <= item.rating
+                                                        ? "/Images/star-filled.svg"
+                                                        : "/Images/star-empty.svg"}
+                                                    alt="Star" width={15} height={15} />
+                                            ))}
+                                            <span className="rating">({item.rating}.0)</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="date">{item.date}</div>
@@ -144,14 +149,24 @@ export default function Comments() {
                         <p>Rate the usefulness of the article</p>
                         <div>
                             <div className="review-icons">
-                                <img src="/Images/review_icon_one.svg" alt="Review icon" width={16} height={16} />
-                                <img src="/Images/review_icon_two.svg" alt="Review icon" width={16} height={16} />
-                                <img src="/Images/review_icon_three.svg" alt="Review icon" width={16} height={16} />
-                                <img src="/Images/review_icon_four.svg" alt="Review icon" width={16} height={16} />
-                                <button>
-                                    <img src="/Images/review_icon_five.svg" alt="Review icon" width={16} height={16} />
-                                    <p>Good</p>
-                                </button>
+                                {[1, 2, 3, 4, 5].map((star) => (
+                                    <div key={star} className="review-icon-div" onClick={() => setForm({ ...form, rating: star })}>
+                                        {star !== 5 &&
+                                            <img
+                                                src={`/Images/review_icon_${star == 1 ? 'one' : star == 2 ? 'two' : star == 3 ? 'three' : 'four'}.svg`}
+                                                alt={`Rating ${star}`}
+                                                className={star == form.rating ? "selected-star" : ""}
+                                                width={16}
+                                                height={16}
+                                            />
+                                        }
+                                        {star === 5 &&
+                                            <button onClick={() => setForm({ ...form, rating: 5 })}>
+                                                <img src="/Images/review_icon_five.svg" className={star <= form.rating ? "selected-star" : ""} alt="Review icon" width={16} height={16} />
+                                                <p>Good</p>
+                                            </button>}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

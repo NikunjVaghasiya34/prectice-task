@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Kang Haerin",
+        "auther": "/Images/Kang_Haerin.jpg",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus ",
+        "date": "22 Jul 2022",
+        "rating": 5
+    },
+    {
+        "name": "Danielle Marsh",
+        "auther": "/Images/Danielle_Marsh.jpg",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus ",
+        "date": "15 Jun 2022",
+        "rating": 4
+    }
+]
