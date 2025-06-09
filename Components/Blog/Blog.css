@@ -120,6 +120,7 @@
 
 @media screen and (max-width: 1200px) {
   .side-section-card img {
+    width: 100%;
     max-width: 100%;
   }
 }
