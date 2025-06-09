@@ -6,22 +6,22 @@ import Image from "next/image";
 const slides = [
     {
         name: "Alex Carter",
-        image: "/images/Alex_Carter_image.jpg",
+        image: "/Images/Alex_Carter_image.jpg",
         description: "With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures."
     },
     {
         name: "Samantha Lee",
-        image: "/images/Alex_Carter_image.jpg",
+        image: "/Images/Alex_Carter_image.jpg",
         description: "With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures."
     },
     {
         name: "Michael Chen",
-        image: "/images/Alex_Carter_image.jpg",
+        image: "/Images/Alex_Carter_image.jpg",
         description: "With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures."
     },
     {
         name: "Rachel Kim",
-        image: "/images/Alex_Carter_image.jpg",
+        image: "/Images/Alex_Carter_image.jpg",
         description: "With over a decade of experience in the fitness industry, Alex specializes in strength training and functional fitness. Certified by NASM and known for his motivational style, Alex designs workout programs that are both challenging and achievable. His passion lies in helping clients build strength and confidence through personalized training routines. Outside the gym, Alex is an avid runner and enjoys outdoor adventures."
     }
 ];
@@ -58,7 +58,7 @@ export default function BlogSlider() {
             <div className="slider-controls">
                 <div className="slider-control-div">
                     <button onClick={() => scroll("left")} className="arrow-btn-left">
-                        <img src="/images/Prev_icon.svg" alt="Left Arrow" width={16} height={16} />
+                        <img src="/Images/Prev_icon.svg" alt="Left Arrow" width={16} height={16} />
                         <span>Previous</span>
                     </button>
                     <p>5 Tips for Better Cardio Sessions</p>
@@ -66,7 +66,7 @@ export default function BlogSlider() {
                 <div className="slider-control-div">
                     <button onClick={() => scroll("right")} className="arrow-btn-right">
                         <span>Next</span>
-                        <img src="/images/Next_icon.svg" alt="Right Arrow" width={16} height={16} />
+                        <img src="/Images/Next_icon.svg" alt="Right Arrow" width={16} height={16} />
                     </button>
                     <p>Meal Prep Basics for Gym Enthusiasts</p>
                 </div>

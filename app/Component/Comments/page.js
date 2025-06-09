@@ -6,14 +6,14 @@ export default function Comments() {
     const [comments, setComments] = useState([
         {
             name: "Kang Haerin",
-            auther: "/images/Kang_Haerin.jpg",
+            auther: "/Images/Kang_Haerin.jpg",
             comment: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus ",
             date: "22 Jul 2022",
             rating: 5,
         },
         {
             name: "Kang Haerin",
-            auther: "/images/Kang_Haerin.jpg",
+            auther: "/Images/Kang_Haerin.jpg",
             comment: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus ",
             date: "22 Jul 2022",
             rating: 5,
@@ -40,7 +40,7 @@ export default function Comments() {
 
         const newComment = {
             name: form.name,
-            auther: "/images/Danielle_Marsh.jpg",
+            auther: "/Images/Danielle_Marsh.jpg",
             comment: form.comment,
             date: new Date().toLocaleDateString("en-GB", {
                 day: "2-digit",

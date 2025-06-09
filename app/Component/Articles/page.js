@@ -4,28 +4,28 @@ import './Articles.css';
 const articlesData = [
     {
         id: 1,
-        image: "/images/Article_one_image.jpg",
+        image: "/Images/Article_one_image.jpg",
         title: "The Ultimate Guide to Full-Body Workouts",
         description: "Discover exercises that target every muscle group, helping you build strength and endurance. Perfect for...",
         author: "By Alex Carter",
     },
     {
         id: 2,
-        image: "/images/Article_two_image.jpg",
+        image: "/Images/Article_two_image.jpg",
         title: "5 Tips for Better Cardio Sessions",
         description: "Improve your cardio performance with these simple yet effective techniques to maximize...",
         author: "By Maya Lee",
     },
     {
         id: 3,
-        image: "/images/Article_three_image.jpg",
+        image: "/Images/Article_three_image.jpg",
         title: "Meal Prep Basics for Gym Enthusiasts",
         description: "Fuel your workouts with balanced, easy-to-prepare meals. A guide on planning, prepping, and staying consi...",
         author: "By Jordan Smith",
     },
     {
         id: 4,
-        image: "/images/Article_four_image.jpg",
+        image: "/Images/Article_four_image.jpg",
         title: "Building Core Strength: Exercises and Benefits",
         description: "A strong core is essential for stability and injury prevention. Learn the best exercises to enhance your...",
         author: "By Emma Rodriguez",

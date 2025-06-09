@@ -6,19 +6,19 @@ import { useEffect, useState } from "react";
 
 const explorMoreData = [
     {
-        image: "/images/Explore_image_one.jpg",
+        image: "/Images/Explore_image_one.jpg",
         category: "Culinary",
         date: "13 Jun 2022",
         description: "Two women in local stand are chatting during morning..",
     },
     {
-        image: "/images/Explore_image_one.jpg",
+        image: "/Images/Explore_image_one.jpg",
         category: "Travel",
         date: "22 Jul 2022",
         description: "Enjoying the sunset on Padar island together",
     },
     {
-        image: "/images/Explor_image_two.jpg",
+        image: "/Images/Explor_image_two.jpg",
         category: "Travel",
         date: "22 Jul 2022",
         description: "Enjoying the sunset on Padar island together",
@@ -28,23 +28,23 @@ const explorMoreData = [
 const tourGuidesData = [
     {
         name: "Miranda Rachel",
-        image: "/images/Miranda_Rachel.jpg",
+        image: "/Images/Miranda_Rachel.jpg",
         location: "Jombang, Jawa timur",
-        ratingImage: "/images/Four_star.jpg",
+        ratingImage: "/Images/Four_star.jpg",
         rating: "4.0",
     },
     {
         name: "Danielle Marsh",
-        image: "/images/Danielle_Marsh.jpg",
+        image: "/Images/Danielle_Marsh.jpg",
         location: "Wonosobo, Jawa ten..",
-        ratingImage: "/images/Four_star.jpg",
+        ratingImage: "/Images/Four_star.jpg",
         rating: "4.0",
     },
     {
         name: "Kang Haerin",
-        image: "/images/Kang_Haerin.jpg",
+        image: "/Images/Kang_Haerin.jpg",
         location: "Bandung, Jawa barat",
-        ratingImage: "/images/Five_star.jpg",
+        ratingImage: "/Images/Five_star.jpg",
         rating: "5.0",
     },
 ];
@@ -72,7 +72,7 @@ export default function MainImage() {
                     <div className="head-section">
                         <div className="blog-author">
                             <div>
-                                <Image src={"/images/Alex_Carter_image.jpg"}
+                                <Image src={"/Images/Alex_Carter_image.jpg"}
                                     className="author-image"
                                     alt="Author Image"
                                     width={32}
@@ -157,7 +157,7 @@ export default function MainImage() {
                                                 <h4>{guide.name}</h4>
                                                 <div className="tour-guides-box-content">
                                                     <Image
-                                                        src="/images/location_icon.svg"
+                                                        src="/Images/location_icon.svg"
                                                         alt="Location Icon"
                                                         width={13}
                                                         height={16}
