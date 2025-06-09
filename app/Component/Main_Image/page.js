@@ -22,11 +22,11 @@ export default function MainImage() {
     const getImageSrc = () => {
         switch (screenSize) {
             case "desktop":
-                return "/images/main_image.png";
+                return "/Images/main_image.png";
             case "tablet":
-                return "/images/main_image_desctop.jpg";
+                return "/Images/main_image_desctop.jpg";
             default:
-                return "/images/main_image_mobile.jpg";
+                return "/Images/main_image_mobile.jpg";
         }
     };
 
