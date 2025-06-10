@@ -101,6 +101,8 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-break: anywhere;
+  word-wrap: break-word;
 }
 
 /* For Mobile Screen */
@@ -262,6 +264,18 @@ textarea {
 .rating-3 { background-color: #ff9800 !important; } /* Average */
 .rating-4 { background-color: #03a9f4 !important; } /* Nice */
 .rating-5 { background-color: #4caf50 !important; } /* Good */
+
+@media screen and (max-width: 375px) {
+  .review-icons button p {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .review-icons button {
+    padding: 10px 16px;
+    gap: 4px;
+  }
+}
 
 
 @media screen and (max-width: 768px) {
